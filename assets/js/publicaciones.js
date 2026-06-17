@@ -327,10 +327,10 @@
         noResults.style.display = filtered.length === 0 ? 'block' : 'none';
       }
 
-      // Page info
+      // Page info (only show when there are multiple pages)
       var pageInfo = document.getElementById('pub-page-info');
-      if (pageInfo && filtered.length > 0) {
-        pageInfo.textContent = 'Mostrando ' + (start + 1) + '-' + Math.min(end, filtered.length) + ' de ' + filtered.length + ' publicaciones';
+      if (pageInfo && totalPages > 1) {
+        pageInfo.textContent = 'Página ' + currentPage + ' de ' + totalPages + ' (' + filtered.length + ' publicaciones)';
       } else if (pageInfo) {
         pageInfo.textContent = '';
       }
